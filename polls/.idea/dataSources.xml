@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="567148602">
+    <data-source source="LOCAL" name="Django default" uuid="e7cda5dd-c5c9-4fe8-bf91-dc44d13043f0">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql:///poll</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df9bdf93df9bdf98df98df9edf9bdf93df93df9bdf9bdf93</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
