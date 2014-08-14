@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form action="/submit/" method="get">
+        <ul>
+            {% for poll in Poll %}
+                <li>
+                    <table>
+                        <tr>{{ poll.question }}</tr>
+                        <tr>
+                        {% for choice_1 in Choice %}
+                            {% if choice_1.poll_id == poll.id %}
+                            <td>
+                                <input  type="radio" value="{{ choice_1.id }}" name="choice_{{ choice_1.poll_id }}"><p>{{ choice_1.choice_text }}</p>
+                            <td><p>{{ choice_1.votes }}</p>
+                            </td>
+                            {% endif %}
+                        {% endfor %}
+                        </tr>
+                    </table>
+                </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" name="submit" value="提交">
+    </form>
+</body>
+</html>
