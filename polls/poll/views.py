@@ -1,7 +1,12 @@
 from django.shortcuts import render
 from poll.models import Poll,Choice
 from django.shortcuts import render_to_response,HttpResponseRedirect,HttpResponse
+from django import forms
+class UploadFileForm(forms.Form):
+    title = forms.CharField(max_length=50)
+    file = forms.FileField()
 # Create your views here.
+
 def pollWeb(request):
     pollObj = Poll.objects.all()
     choiceObj = Choice.objects.all()
@@ -19,7 +24,16 @@ def submit(request):
                 choice.votes += 1
                 choice.save()
     return HttpResponseRedirect("/pollWeb/")
-
+def upload_file(request):
+  if request.method == 'POST':
+     form = UploadFileForm(request.POST,request.FILES)
+     h="ok"
+     if form.is_valid():
+         h=h+"ok"
+  return HttpResponse(h)
+"""else:
+        form = UploadFileForm()
+        return HttpResponseRedirect("/pollWeb/") """
 
 
 

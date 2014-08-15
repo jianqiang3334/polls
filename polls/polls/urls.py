@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
 admin.autodiscover()
-from poll.views import pollWeb,submit
+from poll.views import pollWeb,submit,upload_file
 
 urlpatterns = patterns('',
     # Examples:
@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^pollWeb/$',pollWeb),
     url(r'^submit/$',submit),
+    url(r'^upload_file/$',upload_file),
 )
