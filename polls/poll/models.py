@@ -10,3 +10,6 @@ class Choice(models.Model):
     poll = models.ForeignKey(Poll)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
+class Upload(models.Model):
+    title = models.CharField(max_length=50)
+    file = models.CharField(max_length=200)

@@ -28,8 +28,9 @@
         <input type="submit" name="submit" value="提交">
     </form>
     <form enctype="multipart/form-data" method="post" action="/upload_file/">
-        <input type="file" name="file" /><br/>
+        {{ form.as_p }}
         <input type="submit" value="上传文件" />
     </form>
+    <a href="{{ url }}">下载</a>
 </body>
 </html>
